@@ -50,6 +50,14 @@ input:focus {
   outline: none;
   border-color: #3498db;
 }
+
+.form-group i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(30%);
+  cursor: pointer;
+}
 small {
   visibility: hidden;
   position: absolute;

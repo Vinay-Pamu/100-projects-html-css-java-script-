@@ -3,6 +3,8 @@ const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
+const toggleBtn = document.getElementById("togglePassword");
+const confirmPasswordBtn = document.getElementById("toggleConfirmPassword");
 
 registrationForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -101,3 +103,27 @@ function showSuccess(input) {
   const formGroup = input.parentElement;
   formGroup.className = "form-group success";
 }
+
+toggleBtn.addEventListener("click", function () {
+  if (password.type === "password") {
+    password.type = "text";
+    toggleBtn.classList.remove("fa-eye");
+    toggleBtn.classList.add("fa-eye-slash");
+  } else {
+    password.type = "password";
+    toggleBtn.classList.remove("fa-eye-slash");
+    toggleBtn.classList.add("fa-eye");
+  }
+});
+
+confirmPasswordBtn.addEventListener("click", function () {
+  if (confirmPassword.type === "password") {
+    confirmPassword.type="text"
+   confirmPasswordBtn.classList.remove("fa-eye");
+   confirmPasswordBtn.classList.add("fa-eye-slash");
+  } else {
+    confirmPassword.type = "password";
+   confirmPasswordBtn.classList.remove("fa-eye-slash");
+   confirmPasswordBtn.classList.add("fa-eye");
+  }
+});
